@@ -102,4 +102,4 @@ $ AWS_PROFILE=prod make destroy
 
 ## 👯 Contributing
 
-This template's intent is to set a minimal baseline for getting engineers up an running with a set of repeatable best practices. See something you'd like in this template that would help others? Feel free to [open a new github issue](https://github.com/softprops/serverless-aws-rust/issues/new). Pull requests are also welcome.
+This template's intent is to set a minimal baseline for getting engineers up an running with a set of repeatable best practices. See something you'd like in this template that would help others? Feel free to [open a new github issue](https://github.com/softprops/serverless-aws-rust-http/issues/new). Pull requests are also welcome.
