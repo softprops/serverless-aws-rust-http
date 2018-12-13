@@ -33,7 +33,7 @@ that is _born_ in production.
 
 ```bash
 $ serverless install \
-  --url https://github.com/softprops/serverless-aws-rust \
+  --url https://github.com/softprops/serverless-aws-rust-http \
   --name my-new-api \
   && cd my-new-api \
   && AWS_PROFILE=prod make dependencies deploy
