@@ -10,6 +10,8 @@ fn handler(
     _: Request,
     _: Context,
 ) -> Result<impl IntoResponse, HandlerError> {
+    // `serde_json::Values` impl `IntoResponse` by default
+    // creating a application/json response
     Ok(json!({
     "message": "Go Serverless v1.0! Your function executed successfully!"
     }))
