@@ -79,11 +79,11 @@ Finally, https://travis-ci.org/{username}/{my-new-service} in your browser and g
 
 ## 🔫 function triggering
 
-With your function deployed in production you can now start triggering it using `serverless` framework directly or
+With your function deployed you can now start triggering it using `serverless` framework directly or
 the AWS integration you've configured to trigger it on your behalf
 
 ```sh
-$ npx serverless invoke --stage prod -f hello -d '{"foo":"bar"}'
+$ npx serverless invoke -f hello -d '{"foo":"bar"}'
 ```
 
 ## 🔬 logs
