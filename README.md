@@ -4,10 +4,10 @@ A sample template for bootstraping [Rustlang AWS Lambda](https://github.com/awsl
 
 ## ✨ features
 
-* 🦀 Build Rustlang applications targeting AWS Lambda with ease
-* 🛵 Continuous integration testing with travis CI
-* 🚀 Continuous deployment with travis CI
-* 🧪 Getting started tests
+- 🦀 Build Rustlang applications targeting AWS Lambda with ease
+- 🛵 Continuous integration testing with travis CI
+- 🚀 Continuous deployment with travis CI
+- 🧪 Getting started tests
 
 ## 📦 install
 
@@ -23,7 +23,6 @@ $ npx serverless install \
 
 This will download the source of a sample Rustlang application and unpack it as a new service named
 "my-new-api" in a directory called "my-new-api"
-
 
 ## 🧙 how to be a wizard
 
@@ -61,7 +60,7 @@ $ git remote add origin git@github.com:{username}/{my-new-service}.git
 ```
 
 Using the [travis cli](https://github.com/travis-ci/travis.rb#installation),
- bootstrap your git repos' travis integration.
+bootstrap your git repos' travis integration.
 
 ```bash
 $ travis enable
@@ -102,11 +101,11 @@ Good code should be easily replaceable. Good code is should also be easily dispo
 $ npx serverless remove
 ```
 
-## ℹ️  additional information
+## ℹ️ additional information
 
-* See the [serverless-rust plugin's documentation](https://github.com/softprops/serverless-rust) for more information on plugin usage.
+- See the [serverless-rust plugin's documentation](https://github.com/softprops/serverless-rust) for more information on plugin usage.
 
-* See the [aws rust runtime's documentation](https://github.com/awslabs/aws-lambda-rust-runtime) for more information on writing Rustlang lambda functions
+- See the [aws rust runtime's documentation](https://github.com/awslabs/aws-lambda-rust-runtime) for more information on writing Rustlang lambda functions
 
 ## 👯 contributing
 
