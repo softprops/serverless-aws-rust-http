@@ -44,7 +44,9 @@ install: |
   npm install -g npx
   # https://github.com/xd009642/tarpaulin/issues/150
   if [[ "$TRAVIS_RUST_VERSION" == nightly ]]; then
-    RUSTFLAGS="--cfg procmacro2_semver_exempt" cargo install cargo-tarpaulin -f
+    cargo install cargo-update || echo "cargo-update already installed"
+    RUSTFLAGS="--cfg procmacro2_semver_exempt" cargo install cargo-tarpaulin || echo "cargo-tarpaulin already installed"
+    cargo install-update -a
   fi
 
 script:
@@ -53,7 +55,7 @@ script:
   # test changes to behavior
   - cargo test
   # package application here to cache build artifacts for future build/deploys
-  - npm i --silent && npx serverless package
+  - npm i --ignore-scripts --silent && npx serverless package
 
 # report coverage to coveralls (on nightly)
 # see https://github.com/xd009642/tarpaulin for more information
