@@ -35,11 +35,11 @@ $ npx serverless install \
   --url https://github.com/softprops/serverless-aws-rust-http \
   --name my-new-api \
   && cd my-new-api \
-  && npm i \
+  && npm ci \
   && npx serverless deploy
 ```
 
-`npm i` will make sure npm dependencies are installed. This only needs run once.
+`npm ci` will make sure npm dependencies are installed based directly on your package-lock.json file. This only needs run once.
 The first time you run `npx serverless deploy` it will pull down and compile the base set
 of dependencies and your application. Unless the dependencies change afterwards,
 this should only happen once, resulting in an out of the box rapid deployment
