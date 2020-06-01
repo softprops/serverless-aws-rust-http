@@ -1,15 +1,15 @@
-use lambda_http::{lambda, IntoResponse, Request};
-use lambda_runtime::{error::HandlerError, Context};
+use lambda_http::{handler, lambda, IntoResponse, Request};
 use serde_json::json;
 
-fn main() {
-    lambda!(handler)
+type Error = Box<dyn std::error::Error + Sync + Send + 'static>;
+
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    lambda::run(handler(hello)).await?;
+    Ok(())
 }
 
-fn handler(
-    _: Request,
-    _: Context,
-) -> Result<impl IntoResponse, HandlerError> {
+async fn hello(_: Request) -> Result<impl IntoResponse, Error> {
     // `serde_json::Values` impl `IntoResponse` by default
     // creating an application/json response
     Ok(json!({
@@ -21,14 +21,15 @@ fn handler(
 mod tests {
     use super::*;
 
-    #[test]
-    fn handler_handles() {
+    #[tokio::test]
+    async fn hello_handles() {
         let request = Request::default();
         let expected = json!({
             "message": "Go Serverless v1.0! Your function executed successfully!"
         })
         .into_response();
-        let response = handler(request, Context::default())
+        let response = hello(request)
+            .await
             .expect("expected Ok(_) value")
             .into_response();
         assert_eq!(response.body(), expected.body())
