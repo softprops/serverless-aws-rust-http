@@ -5,13 +5,13 @@ A sample template for bootstraping [Rustlang AWS Lambda](https://github.com/awsl
 ## ✨ features
 
 - 🦀 Build Rustlang applications targeting AWS Lambda with ease
-- 🛵 Continuous integration testing with travis CI
-- 🚀 Continuous deployment with travis CI
+- 🛵 Continuous integration testing with GitHub Actions
+- 🚀 Continuous deployment with GitHub Actions
 - 🧪 Getting started tests
 
 ## 📦 install
 
-Install the [serverless framework](https://serverless.com/framework/) cli.
+Install the [serverless framework](https://www.serverless.com/framework/docs/getting-started/) cli.
 
 Then then run the following in your terminal
 
@@ -47,10 +47,10 @@ cycle.
 
 ## 🛵 continuous integration and deployment
 
-This template includes an example [travis](https://travis-ci.org/) [configuration file](.travis.yml) which can unlock a virtuous cycle of continuous integration and deployment
+This template includes an example [GitHub actions](https://travis-ci.org/) [configuration file](.github/workflows/main.yml) which can unlock a virtuous cycle of continuous integration and deployment
 ( i.e all tests are run on prs and every push to master results in a deployment ).
 
-To set up travis you will need to do a view things.
+GitHub actions is managed simply by the presence of a file checked into your repository. To set up GitHub Actions to deploy to AWS you'll need to do a few things
 
 Firstly, version control your source. [Github](https://github.com/) is free for opensource.
 
@@ -59,22 +59,11 @@ $ git init
 $ git remote add origin git@github.com:{username}/{my-new-service}.git
 ```
 
-Using the [travis cli](https://github.com/travis-ci/travis.rb#installation),
-bootstrap your git repos' travis integration.
+Store a `AWS_ACCESS_KEY_ID` `AWS_SECRET_ACCESS_KEY` used for aws deployment in your repositories secrets https://github.com/{username}/{my-new-service}/settings/secrets
 
-```bash
-$ travis enable
-# set up AWS credentials for serverless deployment
-# https://serverless.com/framework/docs/providers/aws/guide/credentials/
-$ travis env set AWS_ACCESS_KEY_ID 'xxx'
-$ travis env set AWS_SECRET_ACCESS_KEY 'xxx'
-```
+Add your changes to git and push them to GitHub.
 
-> ⭐ You can optionally generate code coverage reports with [coveralls](http://coveralls.io/) by enabling your repo [here](https://coveralls.io/repos/new). You may need to sync repos first. You can then view your coverage reports at https://coveralls.io/github/{username}/{my-new-service}
-
-Add your changes to git and push them to github.
-
-Finally, https://travis-ci.org/{username}/{my-new-service} in your browser and grab a bucket of popcorn 🍿
+Finally, open https://github.com/{username}/{my-new-service}/actions in your browser and grab a bucket of popcorn 🍿
 
 ## 🔫 function triggering
 
